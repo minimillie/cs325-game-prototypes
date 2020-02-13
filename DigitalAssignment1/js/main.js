@@ -31,7 +31,7 @@ window.onload = function() {
         
         this.bird.body.gravity.y = 1000;
         
-        var spaceKey = game.input.keybaord.addKey(
+        var spaceKey = game.input.keyboard.addKey(
                         Phaser.Keyboard.SPACEBAR);
         spaceKey.onDown.add(this.jump, this);
     }
