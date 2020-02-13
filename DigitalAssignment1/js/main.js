@@ -49,4 +49,3 @@ window.onload = function() {
         game.state.start('main');
     }
 };
-© 2020 GitHub, Inc.
