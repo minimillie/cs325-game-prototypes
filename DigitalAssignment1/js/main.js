@@ -41,11 +41,11 @@ window.onload = function() {
            this.restartGame()
     }
     
-    jump: function() {
+    function jump() {
         this.bird.body.velocity.y = -350;
     }
     
-    restartGame: function() {
+    function restartGame() {
         game.state.start('main');
     }
 };
