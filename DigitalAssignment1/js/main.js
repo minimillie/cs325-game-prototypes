@@ -15,7 +15,7 @@ window.onload = function() {
     function preload() {
         
         game.load.image( 'bird', 'assets/bird.png' );
-        game.load.image( 'pipe', 'assers/pipe.png' );
+        game.load.image( 'pipe', 'assets/pipe.png' );
     }
     
     var bouncy;
