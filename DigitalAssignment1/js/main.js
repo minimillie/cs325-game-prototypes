@@ -13,8 +13,8 @@ window.onload = function() {
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, jump: jump, restartGame: restartGame } );
     
     function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'bird', 'assets/bone.png' );
+        
+        game.load.image( 'bird', 'assets/bird.png' );
     }
     
     var bouncy;
