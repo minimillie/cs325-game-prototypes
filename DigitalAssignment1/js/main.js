@@ -16,7 +16,7 @@ window.onload = function() {
         
         game.load.image( 'bird', 'assets/ghost.png' );
         game.load.image( 'pipe', 'assets/pillar.png' );
-        game.load.audio( 'jump', 'assets/jump.wav');
+        game.load.audio( 'jump', 'assets/whoosh.wav');
     }
     
     var bouncy;
