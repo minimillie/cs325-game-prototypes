@@ -59,7 +59,7 @@ window.onload = function() {
     }
     
     function restartGame() {
-        game.state.start('main');
+        game.state.restart();
     }
     
     function addOnePipe(x,y) {
