@@ -45,6 +45,8 @@ window.onload = function() {
         this.labelScore = game.add.text(20, 20, "0",
                                         { font: "30px Arial", fill: "#ffffff" });
         
+        this.bird.anchor.setTo(-0.2, 0.5);
+        
     }
     
     function update() {
@@ -52,10 +54,16 @@ window.onload = function() {
            this.restartGame()
        game.physics.arcade.overlap (
            this.bird, this.pipes, this.restartGame, null, this);
+       if (this.bird.angle < 20)
+           this.bird.angle += 1;
     }
     
     function jump() {
         this.bird.body.velocity.y = -350;
+        
+        game.add.tween(this.bird).to({angle: -20}, 100).start();
+        
+        
     }
     
     function restartGame() {
