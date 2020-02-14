@@ -10,7 +10,7 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, jump: jump, restartGame: restartGame, addOnePipe: addOnePipe, addRowOfPipes: addRowOfPipes } );
+    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, jump: jump, restartGame: restartGame, addOnePipe: addOnePipe, addRowOfPipes: addRowOfPipes, hitPipe: hitPipe } );
     
     function preload() {
         
@@ -53,16 +53,18 @@ window.onload = function() {
        if (this.bird.y < 0 || this.bird.y > 490)
            this.restartGame()
        game.physics.arcade.overlap (
-           this.bird, this.pipes, this.restartGame, null, this);
+           this.bird, this.pipes, this.hitPipe, null, this);
        if (this.bird.angle < 20)
            this.bird.angle += 1;
     }
     
     function jump() {
+        if (this.bird.alive == false)
+            return;
+        
         this.bird.body.velocity.y = -350;
         
         game.add.tween(this.bird).to({angle: -20}, 100).start();
-        
         
     }
     
@@ -92,5 +94,19 @@ window.onload = function() {
                this.addOnePipe(400, i * 60 + 10);
                this.score += 1;
                this.labelScore.text = this.score;
+    }
+    
+    function hitPipe() {
+       
+        if (this.bird.alive == false)
+            return;
+        
+        this.bird.alive = false;
+        
+        game.time.events.remove(this.timer);
+        
+        this.pipes.forEach(function(p){
+            p.body.velocity.x = 0;
+        }, this);
     }
 };
