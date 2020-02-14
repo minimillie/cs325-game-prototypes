@@ -16,6 +16,7 @@ window.onload = function() {
         
         game.load.image( 'bird', 'assets/bird.png' );
         game.load.image( 'pipe', 'assets/pipe.png' );
+        game.load.audio( 'jump', 'assets/jump.wav');
     }
     
     var bouncy;
@@ -47,6 +48,8 @@ window.onload = function() {
         
         this.bird.anchor.setTo(-0.2, 0.5);
         
+        this.jumpSound = game.add.audio('jump');
+        
     }
     
     function update() {
@@ -65,6 +68,8 @@ window.onload = function() {
         this.bird.body.velocity.y = -350;
         
         game.add.tween(this.bird).to({angle: -20}, 100).start();
+        
+        this.jumpSound.play();
         
     }
     
