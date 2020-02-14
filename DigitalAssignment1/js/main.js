@@ -15,7 +15,7 @@ window.onload = function() {
     function preload() {
         
         game.load.image( 'bird', 'assets/ghost.png' );
-        game.load.image( 'pipe', 'assets/pipe.png' );
+        game.load.image( 'pipe', 'assets/pillar.png' );
         game.load.audio( 'jump', 'assets/jump.wav');
     }
     
