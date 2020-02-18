@@ -161,5 +161,6 @@ function fireBullet () {
 
         bulletTime = game.time.now + 250;
     }
-
+}
+    
 };
