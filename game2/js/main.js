@@ -7,7 +7,7 @@ window.onload = function() {
 function preload () {
 
     game.load.image('player', 'assets/ghost.png');
-    game.load.image('star', 'assets/bourne.png');
+    game.load.image('star', 'assets/travel.png');
     game.load.image('baddie', 'assets/reds.png');
     game.load.image('lazer', 'assets/lazer.png');
 }
@@ -141,8 +141,8 @@ function fireBullet () {
         //  Grab the first bullet we can from the pool
         var lazer = lazers.getFirstDead(true, player.x + 24 * player.scale.x, player.y + 8, 'lazer');
 
-        lazer.animations.add('fire', frames, 60);
-        /*lazer.animations.frameName = 'frame02';
+        //lazer.animations.add('fire', frames, 60);
+        //lazer.animations.frameName = 'frame02';
 
         lazer.scale.x = player.scale.x;
 
@@ -159,7 +159,7 @@ function fireBullet () {
         // lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
 
         bulletTime = game.time.now + 250;
-        */
+        
     }
 }
     
