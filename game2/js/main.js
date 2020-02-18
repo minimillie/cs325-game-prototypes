@@ -9,8 +9,7 @@ function preload () {
     game.load.image('player', 'assets/ghost.png');
     game.load.image('star', 'assets/bourne.png');
     game.load.image('baddie', 'assets/reds.png');
-    game.load.atlas('lazer', 'assets/_MAP.png', 'assets/_MAP.json');
-
+    game.load.image('lazer', 'assets/lazer.png');
 }
 
 var stars;
