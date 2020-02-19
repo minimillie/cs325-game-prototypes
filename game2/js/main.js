@@ -139,26 +139,24 @@ function fireBullet () {
     if (game.time.now > bulletTime)
     {
         //  Grab the first bullet we can from the pool
-        var lazer = lazers.getFirstDead(true, player.x + 24 * player.scale.x, player.y + 8, 'lazer');
+        var lazer = lazers.getFirstExists(false);
 
         //lazer.animations.add('fire', frames, 60);
         //lazer.animations.frameName = 'frame02';
 
-        lazer.scale.x = player.scale.x;
+        //lazer.scale.x = player.scale.x;
 
-        if (lazer.scale.x === 1)
+        if (lazer)
         {
-            lazer.anchor.x = 1;
+            lazer.reset(player.x, player.y + 8)
+            lazer.body.velocity.y = -400;
+            bulletTime = game.time.now + 200;
         }
-        else
-        {
-             lazer.anchor.x = 0;
-        }
-
+        
         //  Lazers start out with a width of 96 and expand over time
-         lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
+        //lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
 
-        bulletTime = game.time.now + 250;
+        //bulletTime = game.time.now + 250;
         
     }
 }
