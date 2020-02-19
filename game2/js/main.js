@@ -93,14 +93,14 @@ function update () {
 
 function updateBullets (lazer) {
 
-    // if (game.time.now > frameTime)
-    // {
-    //     frameTime = game.time.now + 500;
-    // }
-    // else
-    // {
-    //     return;
-    // }
+     if (game.time.now > frameTime)
+     {
+         frameTime = game.time.now + 500;
+     }
+     else
+     {
+         return;
+     }
 
     //  Adjust for camera scrolling
     var camDelta = game.camera.x - prevCamX;
@@ -148,15 +148,15 @@ function fireBullet () {
 
         if (lazer.scale.x === 1)
         {
-            // lazer.anchor.x = 1;
+            lazer.anchor.x = 1;
         }
         else
         {
-            // lazer.anchor.x = 0;
+             lazer.anchor.x = 0;
         }
 
         //  Lazers start out with a width of 96 and expand over time
-        // lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
+         lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
 
         bulletTime = game.time.now + 250;
         
