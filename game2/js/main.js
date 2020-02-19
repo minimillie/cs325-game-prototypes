@@ -45,6 +45,10 @@ function create () {
     }
 
     lazers = game.add.group();
+    lazers.enableBody = true;
+    lazers.physicsBodyType = Phaser.Physics.ARCADE;
+    lazers.createMultiple
+    
 
     player = game.add.sprite(100, 300, 'player');
     player.anchor.x = 0.5;
@@ -84,8 +88,6 @@ function update () {
     {
         fireBullet();
     }
-
-    lazers.forEachAlive(updateBullets, this);
 
     prevCamX = game.camera.x;
 
@@ -141,22 +143,13 @@ function fireBullet () {
         //  Grab the first bullet we can from the pool
         var lazer = lazers.getFirstExists(false);
 
-        //lazer.animations.add('fire', frames, 60);
-        //lazer.animations.frameName = 'frame02';
-
-        //lazer.scale.x = player.scale.x;
-
         if (lazer)
         {
             lazer.reset(player.x, player.y + 8)
             lazer.body.velocity.y = -400;
             bulletTime = game.time.now + 200;
         }
-        
-        //  Lazers start out with a width of 96 and expand over time
-        //lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
-
-        //bulletTime = game.time.now + 250;
+       
         
     }
 }
