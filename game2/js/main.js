@@ -2,7 +2,7 @@
 
 window.onload = function() {
     
-  var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, updateBullets: updateBullets, fireBullet: fireBullet, collisionHandler: collisionHandler });
+  var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, updateBullets: updateBullets, fireBullet: fireBullet, collisionHandler: collisionHandler, restartGame: restartGame });
 
 function preload () {
 
@@ -57,6 +57,8 @@ function create () {
     
 
     player = game.add.sprite(100, 300, 'player');
+    player.enableBody = true;
+    player.physicsBodyType = Phaser.Physics.ARCADE;
     player.anchor.x = 0.5;
 
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1);
@@ -98,7 +100,9 @@ function update () {
     prevCamX = game.camera.x;
     
     game.physics.arcade.overlap(lazers, baddies, collisionHandler, null, this);
-
+    game.physics.arcade.overlap(player, stars, restartGame, null, this);
+    game.physics.arcade.overlap(player, baddies, restartGame, null, this);
+    
 }
 
 function updateBullets (lazer) {
@@ -162,5 +166,11 @@ function collisionHandler (lazer, baddie) {
     lazer.kill()
     baddie.kill()
 }
+   
+function restartGame () {
+    game.state.restart();
+    
+}
+    
     
 };
