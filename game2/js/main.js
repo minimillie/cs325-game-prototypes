@@ -113,7 +113,7 @@ function update () {
     prevCamX = game.camera.x;
     
     game.physics.arcade.overlap(lazers, baddies, collisionHandler, null, this);
-    game.physics.arcade.overlap(player, stars, restartGame, null, this);
+    game.physics.arcade.collide(player, stars, restartGame, null, this);
    // game.physics.arcade.overlap(player, baddies, restartGame, null, this);
     
 }
