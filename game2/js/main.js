@@ -67,7 +67,7 @@ function create () {
     
 
     player = game.add.sprite(100, 300, 'player');
-    game.physics.arcade.enable(player);
+    game.physics.enable(player, Phaser.Physics.ARCADE);
     player.anchor.x = 0.5;
 
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1);
