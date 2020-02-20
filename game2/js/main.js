@@ -11,6 +11,7 @@ function preload () {
     game.load.image('baddie', 'assets/travel.png');
     game.load.image('lazer', 'assets/lazer.png');
     game.load.audio('007', 'assets/007.mp3');
+    game.load.audio('burst', 'assets/burst.mp3');
 }
 
 var stars;
@@ -27,6 +28,7 @@ var score = 16;
 var scoreString = '';
 var scoreText;
 var music;
+var burst;
 
 function create () {
 
@@ -34,6 +36,8 @@ function create () {
     
     music = game.add.audio('007');
     music.play();
+    
+    burst = game.add.audio('burst');
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -174,6 +178,8 @@ function fireBullet () {
             lazer.body.velocity.y = -400;
             bulletTime = game.time.now + 200;
         }
+    
+        burst.play();
        
 }
     
