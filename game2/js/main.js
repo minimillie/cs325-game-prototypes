@@ -40,7 +40,7 @@ function create () {
     frames = Phaser.Animation.generateFrameNames('frame', 2, 30, '', 2);
     frames.unshift('frame02');
 
-    stars = game.add.group();
+    stars = game.add.physicsGroup();
 
     for (var i = 0; i < 128; i++)
     {
@@ -115,10 +115,6 @@ function update () {
     game.physics.arcade.overlap(lazers, baddies, collisionHandler, null, this);
     game.physics.arcade.collide(player, stars, restartGame);
     
-    if (game.physics.arcade.collide(player, stars))
-        {
-            game.state.restart();
-        }
    // game.physics.arcade.overlap(player, baddies, restartGame, null, this);
     
 }
