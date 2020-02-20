@@ -22,7 +22,7 @@ var bulletTime = 0;
 var frameTime = 0;
 var frames;
 var prevCamX = 0;
-var score = 16;
+var score = 15;
 var scoreString = '';
 var scoreText;
 
