@@ -2,7 +2,7 @@
 
 window.onload = function() {
     
-  var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, updateBullets: updateBullets, fireBullet: fireBullet });
+  var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, updateBullets: updateBullets, fireButton: fireButton });
 
 function preload () {
 
@@ -136,7 +136,7 @@ function updateBullets (lazer) {
 
 }
 
-function fireBullet () {
+function fireButton () {
 
     if (game.time.now > bulletTime)
     {
