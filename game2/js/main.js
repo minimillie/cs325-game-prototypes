@@ -191,8 +191,8 @@ function collisionHandler (lazer, baddie) {
 }
    
 function restartGame (player, star) {
-    player.kill()
-    star.kill()
+    //player.kill()
+    //star.kill()
     game.state.restart();
     
 }
