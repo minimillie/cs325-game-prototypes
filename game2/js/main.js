@@ -193,13 +193,13 @@ function collisionHandler (lazer, baddie) {
     
     if (score == 0) 
     {
-        scoreString.text = 'You Win!';
+        scoreString = 'You Win!';
     }
 }
    
 function restartGame (player, star) {
     score = 16;
-    burst.stop();
+    music.stop();
     game.state.restart();
     
 }
