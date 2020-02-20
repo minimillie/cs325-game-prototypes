@@ -27,7 +27,7 @@ function create () {
 
     game.world.setBounds(0, 0, 800*4, 600);
     
-    //game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.startSystem(Phaser.Physics.ARCADE);
 
     frames = Phaser.Animation.generateFrameNames('frame', 2, 30, '', 2);
     frames.unshift('frame02');
@@ -59,7 +59,7 @@ function create () {
     
 
     player = game.add.sprite(100, 300, 'player');
-    game.physics.arcade.enable([player], false);
+    game.physics.arcade.enable([player]);
     player.anchor.x = 0.5;
 
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1);
