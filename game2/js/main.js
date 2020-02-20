@@ -58,14 +58,9 @@ function create () {
     lazers.setAll('checkWorldBounds', true);
     
 
-    //player = game.add.sprite(100, 300, 'player');
-    //game.physics.arcade.enable([player]);
-    //player.anchor.x = 0.5;
-    
-    player = game.add.group();
-    player.enableBody = true;
-    player.physicsBodyType = Phaser.Physics.ARCADE;
-    player.create(game.world.randomX, game.world.randomY, 'player');
+    player = game.add.sprite(100, 300, 'player');
+    game.physics.arcade.enable([player]);
+    player.anchor.x = 0.5;
 
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
