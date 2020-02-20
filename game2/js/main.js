@@ -176,6 +176,12 @@ function collisionHandler (lazer, baddie) {
      //  Increase the score
     score -= 1;
     scoreText.text = scoreString + score;
+    
+    if (score == 0) 
+    {
+        stateText.text = " You Won, \n Click to restart";
+        stateText.visible = true;
+    }
 }
    
 function restartGame (player, star) {
