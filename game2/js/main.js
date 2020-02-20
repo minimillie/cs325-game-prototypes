@@ -118,7 +118,7 @@ function update () {
     
 }
 
-/*function updateBullets (lazer) {
+function updateBullets (lazer) {
 
      if (game.time.now > frameTime)
      {
@@ -160,7 +160,7 @@ function update () {
     }
 
 }
-*/
+
     
 function fireBullet () {
 
