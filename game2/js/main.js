@@ -22,6 +22,9 @@ var bulletTime = 0;
 var frameTime = 0;
 var frames;
 var prevCamX = 0;
+var score = 16;
+var scoreString = '';
+var scoreText;
 
 function create () {
 
@@ -68,6 +71,9 @@ function create () {
     fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     prevCamX = game.camera.x;
+    
+    scoreString = 'Agents Left : ';
+    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Arial', fill: '#fff' });
 
 }
 
@@ -166,6 +172,10 @@ function fireBullet () {
 function collisionHandler (lazer, baddie) {
     lazer.kill()
     baddie.kill()
+    
+     //  Increase the score
+    score -= 1;
+    scoreText.text = scoreString + score;
 }
    
 function restartGame (player, star) {
