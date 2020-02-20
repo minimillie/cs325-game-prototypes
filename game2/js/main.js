@@ -114,6 +114,11 @@ function update () {
     
     game.physics.arcade.overlap(lazers, baddies, collisionHandler, null, this);
     game.physics.arcade.collide(player, stars, restartGame);
+    
+    if (game.physics.arcade.collide(player, stars))
+        {
+            game.state.restart();
+        }
    // game.physics.arcade.overlap(player, baddies, restartGame, null, this);
     
 }
