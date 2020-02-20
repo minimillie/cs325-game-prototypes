@@ -7,8 +7,8 @@ window.onload = function() {
 function preload () {
 
     game.load.image('player', 'assets/ghost.png');
-    game.load.image('star', 'assets/travel.png');
-    game.load.image('baddie', 'assets/reds.png');
+    game.load.image('star', 'assets/reds.png');
+    game.load.image('baddie', 'assets/travel.png');
     game.load.image('lazer', 'assets/lazer.png');
 }
 
@@ -38,6 +38,8 @@ function create () {
     }
 
     baddies = game.add.group();
+    baddies.enableBody = true;
+    baddies.physicsBodyType = Phaser.Physics.ARCADE;
 
     for (var i = 0; i < 16; i++)
     {
@@ -95,7 +97,7 @@ function update () {
 
     prevCamX = game.camera.x;
     
-    game.physics.arcade.overlap(lazers, stars, collisionHandler, null, this);
+    game.physics.arcade.overlap(lazers, baddies, collisionHandler, null, this);
 
 }
 
@@ -156,9 +158,9 @@ function fireBullet () {
        
 }
     
-function collisionHandler (lazer, star) {
+function collisionHandler (lazer, baddie) {
     lazer.kill()
-    star.kill()
+    baddie.kill()
 }
     
 };
