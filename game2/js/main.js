@@ -138,8 +138,6 @@ function updateBullets (lazer) {
 
 function fireBullet () {
 
-    if (game.time.now > bulletTime)
-    {
         //  Grab the first bullet we can from the pool
         var lazer = lazers.getFirstExists(false);
 
@@ -150,8 +148,6 @@ function fireBullet () {
             bulletTime = game.time.now + 200;
         }
        
-        
-    }
 }
     
 };
