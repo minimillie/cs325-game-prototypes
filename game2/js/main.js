@@ -10,6 +10,7 @@ function preload () {
     game.load.image('star', 'assets/reds.png');
     game.load.image('baddie', 'assets/travel.png');
     game.load.image('lazer', 'assets/lazer.png');
+    game.load.audio('007', 'assets/007.mp3');
 }
 
 var stars;
@@ -25,10 +26,14 @@ var prevCamX = 0;
 var score = 16;
 var scoreString = '';
 var scoreText;
+var music;
 
 function create () {
 
     game.world.setBounds(0, 0, 800*4, 600);
+    
+    music = game.add.audio('007');
+    music.play();
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
