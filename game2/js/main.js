@@ -180,6 +180,10 @@ function collisionHandler (lazer, baddie) {
     if (score == 0) 
     {
         stateText.text = "You Won";
+        stateText.visible = true;
+
+        //the "click to restart" handler
+        game.input.onTap.addOnce(restart,this);
     }
 }
    
