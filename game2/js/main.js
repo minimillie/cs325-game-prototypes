@@ -47,7 +47,11 @@ function create () {
     lazers = game.add.group();
     lazers.enableBody = true;
     lazers.physicsBodyType = Phaser.Physics.ARCADE;
-    lazers.createMultiple
+    lazers.createMultiple(30, 'lazer');
+    lazers.setAll('anchor.x', 0.5);
+    lazers.setAll('anchor.y', 1);
+    lazers.setAll('outOfBoundsKill', true);
+    lazers.setAll('checkWorldBounds', true);
     
 
     player = game.add.sprite(100, 300, 'player');
