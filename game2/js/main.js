@@ -179,8 +179,7 @@ function collisionHandler (lazer, baddie) {
     
     if (score == 0) 
     {
-        stateText.text = " You Won";
-        
+        stateText.text = "You Won";
     }
 }
    
