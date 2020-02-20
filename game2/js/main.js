@@ -22,7 +22,7 @@ var bulletTime = 0;
 var frameTime = 0;
 var frames;
 var prevCamX = 0;
-var score = 15;
+var score = 16;
 var scoreString = '';
 var scoreText;
 
@@ -179,8 +179,8 @@ function collisionHandler (lazer, baddie) {
     
     if (score == 0) 
     {
-        stateText.text = " You Won, \n Click to restart";
-        stateText.visible = true;
+        stateText.text = " You Won";
+        
     }
 }
    
