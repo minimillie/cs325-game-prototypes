@@ -193,8 +193,7 @@ function collisionHandler (lazer, baddie) {
 }
    
 function restartGame (player, star) {
-    //player.kill()
-    //star.kill()
+    score = 16;
     game.state.restart();
     
 }
