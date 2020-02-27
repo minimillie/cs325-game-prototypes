@@ -16,6 +16,9 @@ GameStates.makeGame = function( game, shared ) {
    var selectedGemTween;
    var tempShiftedGem = null;
    var allowInput; 
+   var pointer = game.input.mousePointer;
+   var x = game.input.mousePointer.x;
+   var y = game.input.mousePointer.y;
     
     function quitGame() {
 
