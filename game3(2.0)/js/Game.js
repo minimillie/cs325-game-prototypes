@@ -43,7 +43,7 @@ GameStates.makeGame = function( game, shared ) {
     
         },
         
-       releaseGem function() {
+       releaseGem: function() {
 
     if (tempShiftedGem === null) {
         selectedGem = null;
@@ -98,7 +98,7 @@ GameStates.makeGame = function( game, shared ) {
 
     }
 
-slideGem function(pointer, x, y) {
+slideGem: function(pointer, x, y) {
 
     // check if a selected gem should be moved and do it
 
@@ -146,7 +146,7 @@ slideGem function(pointer, x, y) {
 }
 
 // fill the screen with as many gems as possible
-spawnboard function() {
+spawnboard: function() {
 
     BOARD_COLS = Math.floor(game.world.width / GEM_SIZE_SPACED);
     BOARD_ROWS = Math.floor(game.world.height / GEM_SIZE_SPACED);
@@ -184,7 +184,7 @@ spawnboard function() {
 }
 
 // select a gem and remember its starting position
-selectGem function(gem) {
+selectGem: function(gem) {
 
     if (allowInput)
     {
@@ -196,21 +196,21 @@ selectGem function(gem) {
 }
 
 // find a gem on the board according to its position on the board
-getGem function(posX, posY) {
+getGem: function(posX, posY) {
 
     return gems.iterate("id", calcGemId(posX, posY), Phaser.Group.RETURN_CHILD);
 
 }
 
 // convert world coordinates to board position
-getGemPos function(coordinate) {
+getGemPos: function(coordinate) {
 
     return Math.floor(coordinate / GEM_SIZE_SPACED);
 
 }
 
 // set the position on the board for a gem
-setGemPos function(gem, posX, posY) {
+setGemPos: function(gem, posX, posY) {
 
     gem.posX = posX;
     gem.posY = posY;
@@ -220,28 +220,28 @@ setGemPos function(gem, posX, posY) {
 
 // the gem id is used by getGem() to find specific gems in the group
 // each position on the board has a unique id
-calcGemId function(posX, posY) {
+calcGemId: function(posX, posY) {
 
     return posX + posY * BOARD_COLS;
 
 }
 
 // since the gems are a spritesheet, their color is the same as the current frame number
-getGemColor function(gem) {
+getGemColor: function(gem) {
 
     return gem.frame;
 
 }
 
 // set the gem spritesheet to a random frame
-randomizeGemColor function(gem) {
+randomizeGemColor: function(gem) {
 
     gem.frame = game.rnd.integerInRange(0, gem.animations.frameTotal - 1);
 
 }
 
 // gems can only be moved 1 square up/down or left/right
-checkIfGemCanBeMovedHere function(fromPosX, fromPosY, toPosX, toPosY) {
+checkIfGemCanBeMovedHere: function(fromPosX, fromPosY, toPosX, toPosY) {
 
     if (toPosX < 0 || toPosX >= BOARD_COLS || toPosY < 0 || toPosY >= BOARD_ROWS)
     {
@@ -264,7 +264,7 @@ checkIfGemCanBeMovedHere function(fromPosX, fromPosY, toPosX, toPosY) {
 // count how many gems of the same color lie in a given direction
 // eg if moveX=1 and moveY=0, it will count how many gems of the same color lie to the right of the gem
 // stops counting as soon as a gem of a different color or the board end is encountered
-countSameColorGems function(startGem, moveX, moveY) {
+countSameColorGems: function(startGem, moveX, moveY) {
 
     var curX = startGem.posX + moveX;
     var curY = startGem.posY + moveY;
@@ -282,7 +282,7 @@ countSameColorGems function(startGem, moveX, moveY) {
 }
 
 // swap the position of 2 gems when the player drags the selected gem into a new location
-swapGemPosition function(gem1, gem2) {
+swapGemPosition: function(gem1, gem2) {
 
     var tempPosX = gem1.posX;
     var tempPosY = gem1.posY;
@@ -294,7 +294,7 @@ swapGemPosition function(gem1, gem2) {
 // count how many gems of the same color are above, below, to the left and right
 // if there are more than 3 matched horizontally or vertically, kill those gems
 // if no match was made, move the gems back into their starting positions
-checkAndKillGemMatches function(gem) {
+checkAndKillGemMatches: function(gem) {
 
     if (gem === null) { return; }
 
@@ -327,7 +327,7 @@ checkAndKillGemMatches function(gem) {
 }
 
 // kill all gems from a starting position to an end position
-killGemRange function(fromX, fromY, toX, toY) {
+killGemRange: function(fromX, fromY, toX, toY) {
 
     fromX = Phaser.Math.clamp(fromX, 0, BOARD_COLS - 1);
     fromY = Phaser.Math.clamp(fromY , 0, BOARD_ROWS - 1);
@@ -346,7 +346,7 @@ killGemRange function(fromX, fromY, toX, toY) {
 }
 
 // move gems that have been killed off the board
-removeKilledGems function() {
+removeKilledGems: function() {
 
     gems.forEach(function(gem) {
         if (!gem.alive) {
@@ -357,7 +357,7 @@ removeKilledGems function() {
 }
 
 // animated gem movement
-tweenGemPos function(gem, newPosX, newPosY, durationMultiplier) {
+tweenGemPos: function(gem, newPosX, newPosY, durationMultiplier) {
 
     console.log('Tween ',gem.name,' from ',gem.posX, ',', gem.posY, ' to ', newPosX, ',', newPosY);
     if (durationMultiplier === null || typeof durationMultiplier === 'undefined')
@@ -370,7 +370,7 @@ tweenGemPos function(gem, newPosX, newPosY, durationMultiplier) {
 }
 
 // look for gems with empty space beneath them and move them down
-dropGems function() {
+dropGems: function() {
 
     var dropRowCountMax = 0;
 
@@ -402,7 +402,7 @@ dropGems function() {
 }
 
 // look for any empty spots on the board and spawn new gems in their place that fall down from above
-refillBoard function() {
+refillBoard: function() {
 
     var maxGemsMissingFromCol = 0;
 
@@ -434,7 +434,7 @@ refillBoard function() {
 }
 
 // when the board has finished refilling, re-enable player input
-boardRefilled function() {
+boardRefilled: function() {
     var canKill = false;
     for (var i = 0; i < BOARD_COLS; i++)
     {
