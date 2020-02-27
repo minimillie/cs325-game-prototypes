@@ -25,6 +25,11 @@ var selectedGemStartPos;
 var selectedGemTween;
 var tempShiftedGem = null;
 var allowInput;
+    
+var score = 0;
+var scoreString = '';
+var scoreText;
+
 
 function preload() {
 
