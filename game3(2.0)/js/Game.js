@@ -16,7 +16,7 @@ GameStates.makeGame = function( game, shared ) {
    var selectedGemTween;
    var tempShiftedGem = null;
    var allowInput; 
-   var pointer = game.input.activePointer;
+   var pointer = this.game.input.mousePointer;
    var x = game.input.activePointer.x;
    var y = game.input.activePointer.y;
     
