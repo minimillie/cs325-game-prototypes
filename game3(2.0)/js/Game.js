@@ -146,7 +146,7 @@ slideGem: function(pointer, x, y) {
             }
         }
     }
-}
+},
 
 // fill the screen with as many gems as possible
 spawnboard: function() {
@@ -184,7 +184,7 @@ spawnboard: function() {
     tempShiftedGem = null;
 
     // refillBoard();
-}
+},
 
 // select a gem and remember its starting position
 selectGem: function(gem) {
@@ -196,21 +196,21 @@ selectGem: function(gem) {
         selectedGemStartPos.y = gem.posY;
     }
 
-}
+},
 
 // find a gem on the board according to its position on the board
 getGem: function(posX, posY) {
 
     return gems.iterate("id", calcGemId(posX, posY), Phaser.Group.RETURN_CHILD);
 
-}
+},
 
 // convert world coordinates to board position
 getGemPos: function(coordinate) {
 
     return Math.floor(coordinate / GEM_SIZE_SPACED);
 
-}
+},
 
 // set the position on the board for a gem
 setGemPos: function(gem, posX, posY) {
@@ -219,7 +219,7 @@ setGemPos: function(gem, posX, posY) {
     gem.posY = posY;
     gem.id = calcGemId(posX, posY);
 
-}
+},
 
 // the gem id is used by getGem() to find specific gems in the group
 // each position on the board has a unique id
@@ -227,21 +227,21 @@ calcGemId: function(posX, posY) {
 
     return posX + posY * BOARD_COLS;
 
-}
+},
 
 // since the gems are a spritesheet, their color is the same as the current frame number
 getGemColor: function(gem) {
 
     return gem.frame;
 
-}
+},
 
 // set the gem spritesheet to a random frame
 randomizeGemColor: function(gem) {
 
     gem.frame = game.rnd.integerInRange(0, gem.animations.frameTotal - 1);
 
-}
+},
 
 // gems can only be moved 1 square up/down or left/right
 checkIfGemCanBeMovedHere: function(fromPosX, fromPosY, toPosX, toPosY) {
@@ -262,7 +262,7 @@ checkIfGemCanBeMovedHere: function(fromPosX, fromPosY, toPosX, toPosY) {
     }
 
     return false;
-}
+},
 
 // count how many gems of the same color lie in a given direction
 // eg if moveX=1 and moveY=0, it will count how many gems of the same color lie to the right of the gem
@@ -282,7 +282,7 @@ countSameColorGems: function(startGem, moveX, moveY) {
 
     return count;
 
-}
+},
 
 // swap the position of 2 gems when the player drags the selected gem into a new location
 swapGemPosition: function(gem1, gem2) {
@@ -292,7 +292,7 @@ swapGemPosition: function(gem1, gem2) {
     setGemPos(gem1, gem2.posX, gem2.posY);
     setGemPos(gem2, tempPosX, tempPosY);
 
-}
+},
 
 // count how many gems of the same color are above, below, to the left and right
 // if there are more than 3 matched horizontally or vertically, kill those gems
@@ -327,7 +327,7 @@ checkAndKillGemMatches: function(gem) {
 
     return canKill;
 
-}
+},
 
 // kill all gems from a starting position to an end position
 killGemRange: function(fromX, fromY, toX, toY) {
@@ -346,7 +346,7 @@ killGemRange: function(fromX, fromY, toX, toY) {
         }
     }
 
-}
+},
 
 // move gems that have been killed off the board
 removeKilledGems: function() {
@@ -357,7 +357,7 @@ removeKilledGems: function() {
         }
     });
 
-}
+},
 
 // animated gem movement
 tweenGemPos: function(gem, newPosX, newPosY, durationMultiplier) {
@@ -370,7 +370,7 @@ tweenGemPos: function(gem, newPosX, newPosY, durationMultiplier) {
 
     return game.add.tween(gem).to({x: newPosX  * GEM_SIZE_SPACED, y: newPosY * GEM_SIZE_SPACED}, 100 * durationMultiplier, Phaser.Easing.Linear.None, true);
 
-}
+},
 
 // look for gems with empty space beneath them and move them down
 dropGems: function() {
@@ -402,7 +402,7 @@ dropGems: function() {
 
     return dropRowCountMax;
 
-}
+},
 
 // look for any empty spots on the board and spawn new gems in their place that fall down from above
 refillBoard: function() {
@@ -434,7 +434,7 @@ refillBoard: function() {
 
     game.time.events.add(maxGemsMissingFromCol * 2 * 100, boardRefilled);
 
-}
+},
 
 // when the board has finished refilling, re-enable player input
 boardRefilled: function() {
@@ -462,11 +462,7 @@ boardRefilled: function() {
     } else {
         allowInput = true;
     }
-}
+},
 
-        update: function () {
-    
-          
-        }
     };
 };
