@@ -28,7 +28,7 @@ var allowInput;
 
 function preload() {
 
-    game.load.spritesheet('GEMS', 'assets/kitties.png', GEM_SIZE, GEM_SIZE);
+    game.load.spritesheet('GEMS', 'assets/portraits.png', GEM_SIZE, GEM_SIZE);
 
 }
 
