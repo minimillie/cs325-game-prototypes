@@ -99,7 +99,7 @@ GameStates.makeGame = function( game, shared ) {
     selectedGem = null;
     tempShiftedGem = null;
 
-    }
+    },
 
 slideGem: function(pointer, x, y) {
 
