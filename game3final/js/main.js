@@ -345,6 +345,15 @@ function checkAndKillGemMatches(gem) {
         score += 1;
         scoreText.text = scoreString + score;
     }
+    
+    if (score >= 50)
+    {
+       stateText.text=" GAME OVER \n Click to restart";
+       stateText.visible = true;
+
+        //the "click to restart" handler
+       game.input.onTap.addOnce(restartGame);  
+    }
 
     return canKill;
 
