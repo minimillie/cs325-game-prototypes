@@ -479,7 +479,7 @@ function refillBoard() {
 
 function restartGame () {
     score = 0;
-    //music.stop();
+    music.stop();
     game.state.restart();
     
 }
