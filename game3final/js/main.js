@@ -49,6 +49,9 @@ function create() {
     allowInput = false;
 
     game.input.addMoveCallback(slideGem, this);
+    
+    scoreString = 'Couple Count: ';
+    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
 
 }
 
@@ -285,7 +288,9 @@ function countSameColorGems(startGem, moveX, moveY) {
         curX += moveX;
         curY += moveY;
     }
-
+    
+    score += count;
+    scoreText.text = scoreString + score;
     return count;
 
 }
