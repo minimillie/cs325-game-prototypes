@@ -56,7 +56,7 @@ function create() {
     
     score = 0;
     scoreString = 'Matches: ';
-    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
+    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fc0fc0' });
 
     // currently selected gem starting position. used to stop player form moving gems too far.
     selectedGemStartPos = { x: 0, y: 0 };
@@ -66,7 +66,7 @@ function create() {
 
     game.input.addMoveCallback(slideGem, this);
     
-    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '32px Courier', fill: '#fff' });
+    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '32px Courier', fill: '#fc0fc0' });
     stateText.anchor.setTo(0.5, 0.5);
     stateText.visible = false;
 
