@@ -185,8 +185,7 @@ function spawnBoard() {
             setGemPos(gem, i, j); // each gem has a position on the board
             gem.kill();
         }
-        score = 0;
-        scoreText.text = scoreString + score;
+
     }
 
     removeKilledGems();
