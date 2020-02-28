@@ -56,8 +56,8 @@ function create() {
 
     game.input.addMoveCallback(slideGem, this);
     
-    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '84px Courier', fill: '#fff' });
-    stateText.anchor.setTo(0.5, 0.5);
+    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '50px Courier', fill: '#fff' });
+    stateText.anchor.setTo(400, 300);
     stateText.visible = false;
 
 }
