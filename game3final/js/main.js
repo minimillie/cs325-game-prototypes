@@ -33,12 +33,14 @@ var scoreText;
 var stateText;
     
 var music;
+var move;
 
 
 function preload() {
 
     game.load.spritesheet('GEMS', 'assets/5cats.png', GEM_SIZE, GEM_SIZE);
     game.load.audio('happy', 'assets/happy.mp3');
+    game.load.audio('meow', 'assets/kitty.wav');
 
 }
 
@@ -46,6 +48,8 @@ function create() {
 
     music = game.add.audio('happy');
     music.play();
+    
+    move = game.add.audio('meow');
     
     // fill the screen with as many gems as possible
     spawnBoard();
@@ -314,6 +318,7 @@ function swapGemPosition(gem1, gem2) {
     var tempPosY = gem1.posY;
     setGemPos(gem1, gem2.posX, gem2.posY);
     setGemPos(gem2, tempPosX, tempPosY);
+    move.play();
 
 }
 
