@@ -29,6 +29,8 @@ var allowInput;
 var score = 0;
 var scoreString = '';
 var scoreText;
+    
+var stateText;
 
 
 function preload() {
@@ -52,6 +54,10 @@ function create() {
     
     scoreString = 'Matches: ';
     scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
+    
+    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '84px Courier', fill: '#fff' });
+    stateText.anchor.setTo(0.5, 0.5);
+    stateText.visible = false;
 
 }
 
@@ -178,6 +184,8 @@ function spawnBoard() {
             setGemPos(gem, i, j); // each gem has a position on the board
             gem.kill();
         }
+        score = 0;
+        scoreText.text = scoreString + score;
     }
 
     removeKilledGems();
@@ -326,16 +334,18 @@ function checkAndKillGemMatches(gem) {
     {
         killGemRange(gem.posX, gem.posY - countUp, gem.posX, gem.posY + countDown);
         canKill = true;
+        score += 1;
+        scoreText.text = scoreString + score;
     }
 
     if (countHoriz >= MATCH_MIN)
     {
         killGemRange(gem.posX - countLeft, gem.posY, gem.posX + countRight, gem.posY);
         canKill = true;
+        score += 1;
+        scoreText.text = scoreString + score;
     }
 
-    score += 1;
-    scoreText.text = scoreString + score;
     return canKill;
 
 }
