@@ -55,7 +55,7 @@ function create() {
     spawnBoard();
     
     score = 0;
-    scoreString = 'Matches: ';
+    scoreString = 'MATCHES: ';
     scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fc0fc0' });
 
     // currently selected gem starting position. used to stop player form moving gems too far.
@@ -359,7 +359,7 @@ function checkAndKillGemMatches(gem) {
     
     if (score >= 50)
     {
-       stateText.text=" 50+ Matches! \n Click to help another crazy cat lady!";
+       stateText.text=" 50+ MATCHES! \n CLICK TO HELP ANOTHER CRAZY CAT LADY!";
        stateText.visible = true;
 
         //the "click to restart" handler
