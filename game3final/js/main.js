@@ -10,7 +10,7 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, releaseGem: releaseGem, slideGem: slideGem, spawnBoard: spawnBoard, selectGem: selectGem, getGem: getGem, getGemPos: getGemPos, setGemPos: setGemPos, calcGemId: calcGemId, getGemColor: getGemColor, randomizeGemColor: randomizeGemColor, checkIfGemCanBeMovedHere: checkIfGemCanBeMovedHere, countSameColorGems: countSameColorGems, swapGemPosition: swapGemPosition, checkAndKillGemMatches: checkAndKillGemMatches, killGemRange: killGemRange, removeKilledGems: removeKilledGems, tweenGemPos: tweenGemPos, dropGems: dropGems, refillBoard: refillBoard, boardRefilled: boardRefilled   });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, releaseGem: releaseGem, slideGem: slideGem, spawnBoard: spawnBoard, selectGem: selectGem, getGem: getGem, getGemPos: getGemPos, setGemPos: setGemPos, calcGemId: calcGemId, getGemColor: getGemColor, randomizeGemColor: randomizeGemColor, checkIfGemCanBeMovedHere: checkIfGemCanBeMovedHere, countSameColorGems: countSameColorGems, swapGemPosition: swapGemPosition, checkAndKillGemMatches: checkAndKillGemMatches, killGemRange: killGemRange, removeKilledGems: removeKilledGems, tweenGemPos: tweenGemPos, dropGems: dropGems, refillBoard: refillBoard, boardRefilled: boardRefilled, restartGame: restartGame   });
 
 var GEM_SIZE = 64;
 var GEM_SPACING = 2;
@@ -464,6 +464,13 @@ function refillBoard() {
 
     game.time.events.add(maxGemsMissingFromCol * 2 * 100, boardRefilled);
 
+}
+
+function restartGame (player, star) {
+    score = 0;
+    music.stop();
+    game.state.restart();
+    
 }
 
 // when the board has finished refilling, re-enable player input
