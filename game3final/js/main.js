@@ -31,16 +31,22 @@ var scoreString = '';
 var scoreText;
     
 var stateText;
+    
+var music;
 
 
 function preload() {
 
     game.load.spritesheet('GEMS', 'assets/5cats.png', GEM_SIZE, GEM_SIZE);
+    game.load.audio('happy', 'assets/happy.mp3');
 
 }
 
 function create() {
 
+    music = game.add.audio('happy');
+    music.play();
+    
     // fill the screen with as many gems as possible
     spawnBoard();
     
