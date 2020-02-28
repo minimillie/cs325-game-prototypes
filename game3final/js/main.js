@@ -50,7 +50,7 @@ function create() {
 
     game.input.addMoveCallback(slideGem, this);
     
-    scoreString = 'Couple Count: ';
+    scoreString = 'Matches: ';
     scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
 
 }
@@ -289,8 +289,6 @@ function countSameColorGems(startGem, moveX, moveY) {
         curY += moveY;
     }
     
-    score += count;
-    scoreText.text = scoreString + score;
     return count;
 
 }
@@ -336,6 +334,8 @@ function checkAndKillGemMatches(gem) {
         canKill = true;
     }
 
+    score += 1;
+    scoreText.text = scoreString + score;
     return canKill;
 
 }
