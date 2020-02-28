@@ -41,10 +41,12 @@ function preload() {
 
 function create() {
 
-    scoreString = 'Matches: ';
-    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
     // fill the screen with as many gems as possible
     spawnBoard();
+    
+    score = 0;
+    scoreString = 'Matches: ';
+    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Courier', fill: '#fff' });
 
     // currently selected gem starting position. used to stop player form moving gems too far.
     selectedGemStartPos = { x: 0, y: 0 };
