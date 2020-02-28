@@ -348,7 +348,7 @@ function checkAndKillGemMatches(gem) {
     
     if (score >= 50)
     {
-       stateText.text=" GAME OVER \n Click to restart";
+       stateText.text=" 50 Matches! \n Click to help another crazy cat lady!";
        stateText.visible = true;
 
         //the "click to restart" handler
