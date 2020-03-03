@@ -107,7 +107,7 @@ create: function () {
         data.push(a);
     }
 
-}
+},
 
 copyToData: function (src) {
 
@@ -125,7 +125,7 @@ copyToData: function (src) {
         data.push(a);
     }
 
-}
+},
 
 cloneData: function () {
 
@@ -146,7 +146,7 @@ cloneData: function () {
 
     return clone;
 
-}
+},
 
 createUI: function () {
 
@@ -284,7 +284,7 @@ createUI: function () {
     saveIcon.input.useHandCursor = true;
     saveIcon.events.onInputDown.add(save, this);
 
-}
+},
 
 createDrawingArea: function () {
 
@@ -304,7 +304,7 @@ createDrawingArea: function () {
     canvasGrid = game.add.sprite(x + 1, y + 1, 'drawingGrid');
     canvasGrid.crop(new Phaser.Rectangle(0, 0, spriteWidth * canvasZoom, spriteHeight * canvasZoom));
 
-}
+},
 
 resizeCanvas: function () {
 
@@ -316,7 +316,7 @@ resizeCanvas: function () {
 
     canvasGrid.crop(new Phaser.Rectangle(0, 0, spriteWidth * canvasZoom, spriteHeight * canvasZoom));
     
-}
+},
 
 createPreview: function () {
 
@@ -332,7 +332,7 @@ createPreview: function () {
     previewBG.addToWorld(x, y);
     preview.addToWorld(x + 1, y + 1);
 
-}
+},
 
 resizePreview: function () {
 
@@ -342,7 +342,7 @@ resizePreview: function () {
     previewBG.rect(0, 0, previewBG.width, previewBG.height, '#fff');
     previewBG.rect(1, 1, previewBG.width - 2, previewBG.height - 2, '#3f5c67');
     
-}
+},
 
 refresh: function () {
 
@@ -365,7 +365,7 @@ refresh: function () {
         }
     }
 
-}
+},
 
 createEventListeners: function () {
 
@@ -419,14 +419,14 @@ createEventListeners: function () {
     game.input.onUp.add(onUp, this);
     game.input.addMoveCallback(paint, this);
 
-}
+},
 
 cls: function () {
 
     resetData();
     refresh();
 
-}
+},
 
 nextFrame: function () {
 
@@ -449,7 +449,7 @@ nextFrame: function () {
 
     frameText.text = "Frame: " + frame + " / " + frames.length;
 
-}
+},
 
 prevFrame: function () {
 
@@ -470,7 +470,7 @@ prevFrame: function () {
 
     frameText.text = "Frame: " + frame + " / " + frames.length;
     
-}
+},
 
 drawPalette: function () {
 
@@ -487,7 +487,7 @@ drawPalette: function () {
 
     ui.copy('uiGrid');
 
-}
+},
 
 changePalette: function () {
 
@@ -501,7 +501,7 @@ changePalette: function () {
     drawPalette();
     refresh();
 
-}
+},
 
 setColor: function (i, p) {
 
@@ -525,21 +525,21 @@ setColor: function (i, p) {
 
     paletteArrow.x = (i * 32) + 8;
 
-}
+},
 
 nextColor: function () {
 
     var i = colorIndex + 1;
     setColor(i);
 
-}
+},
 
 prevColor: function () {
 
     var i = colorIndex - 1;
     setColor(i);
 
-}
+},
 
 increaseSize: function (sprite) {
 
@@ -569,7 +569,7 @@ increaseSize: function (sprite) {
     widthText.text = "Width: " + spriteWidth;
     heightText.text = "Height: " + spriteHeight;
 
-}
+},
 
 decreaseSize: function (sprite) {
 
@@ -599,7 +599,7 @@ decreaseSize: function (sprite) {
     widthText.text = "Width: " + spriteWidth;
     heightText.text = "Height: " + spriteHeight;
 
-}
+},
 
 increasePreviewSize: function () {
 
@@ -614,7 +614,7 @@ increasePreviewSize: function () {
     resizePreview();
     refresh();
 
-}
+},
 
 decreasePreviewSize: function () {
 
@@ -629,7 +629,7 @@ decreasePreviewSize: function () {
     resizePreview();
     refresh();
 
-}
+},
 
 save: function () {
 
@@ -674,7 +674,7 @@ save: function () {
     saveText.alpha = 1;
     game.add.tween(saveText).to( { alpha: 0 }, 2000, "Linear", true);
 
-}
+},
 
 shiftLeft: function () {
 
@@ -687,7 +687,7 @@ shiftLeft: function () {
         data[y].push(r);
     }
 
-}
+},
 
 shiftRight: function () {
 
@@ -700,7 +700,7 @@ shiftRight: function () {
         data[y].splice(0, 0, r);
     }
 
-}
+},
 
 shiftUp: function () {
 
@@ -710,7 +710,7 @@ shiftUp: function () {
     var top = data.shift();
     data.push(top);
 
-}
+},
 
 shiftDown: function () {
 
@@ -720,7 +720,7 @@ shiftDown: function () {
     var bottom = data.pop();
     data.splice(0, 0, bottom);
 
-}
+},
 
 onDown: function (pointer) {
 
@@ -744,11 +744,11 @@ onDown: function (pointer) {
         paint(pointer);
     }
 
-}
+},
 
 onUp: function () {
     isDown = false;
-}
+},
 
 paint: function (pointer) {
 
@@ -781,6 +781,6 @@ paint: function (pointer) {
         preview.rect(x * previewSize, y * previewSize, previewSize, previewSize, color);
     }
 
-}
+},
     };
 };
