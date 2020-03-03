@@ -59,9 +59,130 @@ var data;
 //extra
 var colorIndex;
     
-    function test() {
-        return 5;   
+    function createUI() {
+        
     }
+    
+    function createDrawingArea() {
+        
+    }
+    
+    function createPreview() {
+        
+    }
+    
+    function createEventListeners() {
+        
+    }
+    
+    function resetData() {
+        
+    }
+    
+    function setColor() {
+        
+    }
+    
+    function copyToData() {
+        
+    }
+    
+    function cloneData() {
+        
+    }
+    
+    function drawPalette() {
+        
+    }
+    
+    function resizeCanvas() {
+        
+    }
+    
+    function resizePreview() {
+        
+    }
+    
+    function refresh() {
+        
+    }
+    
+    function cls() {
+        
+    }
+    
+    function nextFrame() {
+        
+    }
+    
+    function prevFrame() {
+        
+    }
+    
+    function changePalette() {
+        
+    }
+    
+    function nextColor() {
+        
+    }
+    
+    function prevColor() {
+        
+    }
+    
+    function createUI() {
+        
+    }
+    
+    function increaseSize() {
+        
+    }
+    
+    function decreaseSize() {
+        
+    }
+    
+    function increasePreviewSize() {
+        
+    }
+    
+    function decreasePreviewSize() {
+        
+    }
+    
+    function save() {
+        
+    }
+    
+    function shiftLeft() {
+        
+    }
+    
+    function shiftRight() {
+        
+    }
+    
+    function shiftUp() {
+        
+    }
+    
+    function shiftDown() {
+        
+    }
+    
+    function onDown() {
+        
+    }
+    
+    function onUp() {
+        
+    }
+    
+    function paint() {
+        
+    }
+    
     
     function quitGame() {
 
@@ -84,7 +205,6 @@ create: function () {
     Phaser.Canvas.setTouchAction(game.canvas, 'none');
 
     game.stage.backgroundColor = '#505050';
-    test();
     createUI();
     createDrawingArea();
     createPreview();
