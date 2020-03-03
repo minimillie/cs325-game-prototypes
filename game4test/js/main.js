@@ -11,7 +11,7 @@ window.onload = function() {
     // All loading functions will typically all be found inside "preload()".
     
    
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { create: create });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { create: create, resetData: resetData, copyToData: copyToData, cloneData: cloneData, createUI: createUI, drawPalette: drawPalette, createDrawingArea: createDrawingArea, resizeCanvas: resizeCanvas, createPreview: createPreview, resizePreview: resizePreview, refresh: refresh, createEventListeners: createEventListeners, cls: cls, nextFrame: nextFrame, prevFrame: prevFrame, drawPalette: drawPalette, changePalette: changePalette, setColor: setColor, nextColor: nextColor, prevColor: prevColor, increaseSize: increaseSize, decreaseSize: decreaseSize, increasePreviewSize: increasePreviewSize, decreasePreviewSize: decreasePreviewSize, create: create, save: save, shiftLeft: shiftLeft, shiftRight: shiftRight, shiftUp: shiftUp, shiftDown: shiftDown, onDown: onDown, onUp: onUp, paint: paint });
 
 //  Dimensions
 var previewSize = 6;
