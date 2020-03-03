@@ -59,6 +59,10 @@ var data;
 //extra
 var colorIndex;
     
+    function test() {
+        return 5;   
+    }
+    
     function quitGame() {
 
         //  Here you should destroy anything you no longer need.
@@ -80,7 +84,7 @@ create: function () {
     Phaser.Canvas.setTouchAction(game.canvas, 'none');
 
     game.stage.backgroundColor = '#505050';
-
+    test();
     createUI();
     createDrawingArea();
     createPreview();
