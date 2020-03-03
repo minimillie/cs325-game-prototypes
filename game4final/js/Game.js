@@ -71,8 +71,8 @@ var colorIndex;
     
     return {
  
-function resetData() {
-
+ resetData: function () {
+ 
     data = [];
 
     for (var y = 0; y < spriteHeight; y++)
@@ -89,7 +89,7 @@ function resetData() {
 
 }
 
-function copyToData(src) {
+copyToData: function (src) {
 
     data = [];
 
@@ -107,7 +107,7 @@ function copyToData(src) {
 
 }
 
-function cloneData() {
+cloneData: function () {
 
     var clone = [];
 
@@ -128,7 +128,7 @@ function cloneData() {
 
 }
 
-function createUI() {
+createUI: function () {
 
     game.create.grid('uiGrid', 32 * 16, 32, 32, 32, 'rgba(255,255,255,0.5)');
 
@@ -266,7 +266,7 @@ function createUI() {
 
 }
 
-function createDrawingArea() {
+createDrawingArea: function () {
 
     game.create.grid('drawingGrid', 16 * canvasZoom, 16 * canvasZoom, canvasZoom, canvasZoom, 'rgba(0,191,243,0.8)');
 
@@ -286,7 +286,7 @@ function createDrawingArea() {
 
 }
 
-function resizeCanvas() {
+resizeCanvas: function () {
 
     canvas.resize(spriteWidth * canvasZoom, spriteHeight * canvasZoom);
     canvasBG.resize(canvas.width + 2, canvas.height + 2);
@@ -298,7 +298,7 @@ function resizeCanvas() {
     
 }
 
-function createPreview() {
+createPreview: function () {
 
     preview = game.make.bitmapData(spriteWidth * previewSize, spriteHeight * previewSize);
     previewBG = game.make.bitmapData(preview.width + 2, preview.height + 2);
@@ -314,7 +314,7 @@ function createPreview() {
 
 }
 
-function resizePreview() {
+resizePreview: function () {
 
     preview.resize(spriteWidth * previewSize, spriteHeight * previewSize);
     previewBG.resize(preview.width + 2, preview.height + 2);
@@ -324,7 +324,7 @@ function resizePreview() {
     
 }
 
-function refresh() {
+refresh: function () {
 
     //  Update both the Canvas and Preview
     canvas.clear();
@@ -347,7 +347,7 @@ function refresh() {
 
 }
 
-function createEventListeners() {
+createEventListeners: function () {
 
     keys = game.input.keyboard.addKeys(
         {
@@ -401,14 +401,14 @@ function createEventListeners() {
 
 }
 
-function cls() {
+cls: function () {
 
     resetData();
     refresh();
 
 }
 
-function nextFrame() {
+nextFrame: function () {
 
     //  Save current frame
     frames[frame - 1] = cloneData();
@@ -431,7 +431,7 @@ function nextFrame() {
 
 }
 
-function prevFrame() {
+prevFrame: function () {
 
     if (frame === 1)
     {
@@ -452,7 +452,7 @@ function prevFrame() {
     
 }
 
-function drawPalette() {
+drawPalette: function () {
 
     //  Draw the palette to the UI bmd
     ui.clear(0, 0, 32 * 16, 32);
@@ -469,7 +469,7 @@ function drawPalette() {
 
 }
 
-function changePalette() {
+changePalette: function () {
 
     palette++;
 
@@ -483,7 +483,7 @@ function changePalette() {
 
 }
 
-function setColor(i, p) {
+setColor: function (i, p) {
 
     if (typeof p !== 'undefined')
     {
@@ -507,21 +507,21 @@ function setColor(i, p) {
 
 }
 
-function nextColor() {
+nextColor: function () {
 
     var i = colorIndex + 1;
     setColor(i);
 
 }
 
-function prevColor() {
+prevColor: function () {
 
     var i = colorIndex - 1;
     setColor(i);
 
 }
 
-function increaseSize(sprite) {
+increaseSize: function (sprite) {
 
     if (sprite.name === 'width')
     {
@@ -551,7 +551,7 @@ function increaseSize(sprite) {
 
 }
 
-function decreaseSize(sprite) {
+decreaseSize: function (sprite) {
 
     if (sprite.name === 'width')
     {
@@ -581,7 +581,7 @@ function decreaseSize(sprite) {
 
 }
 
-function increasePreviewSize() {
+increasePreviewSize: function () {
 
     if (previewSize === 16)
     {
@@ -596,7 +596,7 @@ function increasePreviewSize() {
 
 }
 
-function decreasePreviewSize() {
+decreasePreviewSize: function () {
 
     if (previewSize === 1)
     {
@@ -611,7 +611,7 @@ function decreasePreviewSize() {
 
 }
 
-function create() {
+create: function () {
 
     //   So we can right-click to erase
     document.body.oncontextmenu = function() { return false; };
@@ -631,7 +631,7 @@ function create() {
 
 }
 
-function save() {
+save: function () {
 
     //  Save current frame
     frames[frame - 1] = cloneData();
@@ -676,7 +676,7 @@ function save() {
 
 }
 
-function shiftLeft() {
+shiftLeft: function () {
 
     canvas.moveH(-canvasZoom);
     preview.moveH(-previewSize);
@@ -689,7 +689,7 @@ function shiftLeft() {
 
 }
 
-function shiftRight() {
+shiftRight: function () {
 
     canvas.moveH(canvasZoom);
     preview.moveH(previewSize);
@@ -702,7 +702,7 @@ function shiftRight() {
 
 }
 
-function shiftUp() {
+shiftUp: function () {
 
     canvas.moveV(-canvasZoom);
     preview.moveV(-previewSize);
@@ -712,7 +712,7 @@ function shiftUp() {
 
 }
 
-function shiftDown() {
+shiftDown: function () {
 
     canvas.moveV(canvasZoom);
     preview.moveV(previewSize);
@@ -722,7 +722,7 @@ function shiftDown() {
 
 }
 
-function onDown(pointer) {
+onDown: function (pointer) {
 
     if (pointer.y <= 32)
     {
@@ -746,11 +746,11 @@ function onDown(pointer) {
 
 }
 
-function onUp() {
+onUp: function () {
     isDown = false;
 }
 
-function paint(pointer) {
+paint: function (pointer) {
 
     //  Get the grid loc from the pointer
     var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
