@@ -65,6 +65,9 @@ var frame = 1;
 var frames = [[]];
 
 var data;
+    
+//extra
+var colorIndex;
 
 function resetData() {
 
