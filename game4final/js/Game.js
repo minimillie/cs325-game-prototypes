@@ -70,6 +70,26 @@ var colorIndex;
     }
     
     return {
+        
+create: function () {
+
+    //   So we can right-click to erase
+    document.body.oncontextmenu = function() { return false; };
+
+    Phaser.Canvas.setUserSelect(game.canvas, 'none');
+    Phaser.Canvas.setTouchAction(game.canvas, 'none');
+
+    game.stage.backgroundColor = '#505050';
+
+    createUI();
+    createDrawingArea();
+    createPreview();
+    createEventListeners();
+
+    resetData();
+    setColor(2);
+
+},
  
  resetData: function () {
  
@@ -608,26 +628,6 @@ decreasePreviewSize: function () {
 
     resizePreview();
     refresh();
-
-}
-
-create: function () {
-
-    //   So we can right-click to erase
-    document.body.oncontextmenu = function() { return false; };
-
-    Phaser.Canvas.setUserSelect(game.canvas, 'none');
-    Phaser.Canvas.setTouchAction(game.canvas, 'none');
-
-    game.stage.backgroundColor = '#505050';
-
-    createUI();
-    createDrawingArea();
-    createPreview();
-    createEventListeners();
-
-    resetData();
-    setColor(2);
 
 }
 
