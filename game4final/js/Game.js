@@ -785,7 +785,10 @@ create: function () {
   
  update: function () {
    
-    game.input.addMoveCallback(paint, this);
+    if (pointer.isDown == true) {
+        
+        paint(pointer);
+    }
      
  }
         
