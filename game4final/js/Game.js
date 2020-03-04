@@ -782,6 +782,13 @@ create: function () {
     setColor(2);
 
 },
+  
+ update: function () {
+   
+    game.input.addMoveCallback(paint, this);
+     
+ }
+        
        
  
     };
