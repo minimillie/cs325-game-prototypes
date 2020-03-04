@@ -272,7 +272,7 @@ function createDrawingArea() {
     canvasGrid = game.add.sprite(x + 1, y + 1, 'drawingGrid');
     canvasGrid.crop(new Phaser.Rectangle(0, 0, spriteWidth * canvasZoom, spriteHeight * canvasZoom));
 
-},
+}
 
 function resizeCanvas() {
 
@@ -284,7 +284,7 @@ function resizeCanvas() {
 
     canvasGrid.crop(new Phaser.Rectangle(0, 0, spriteWidth * canvasZoom, spriteHeight * canvasZoom));
     
-},
+}
 
 function createPreview() {
 
@@ -387,7 +387,7 @@ function createEventListeners() {
     game.input.onUp.add(onUp, this);
     game.input.addMoveCallback(paint, this);
 
-},
+}
 
 function cls() {
 
