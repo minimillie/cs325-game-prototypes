@@ -59,163 +59,7 @@ var data;
 //extra
 var colorIndex;
     
-    function createUI() {
-        
-    }
-    
-    function createDrawingArea() {
-        
-    }
-    
-    function createPreview() {
-        
-    }
-    
-    function createEventListeners() {
-        
-    }
-    
-    function resetData() {
-        
-    }
-    
-    function setColor() {
-        
-    }
-    
-    function copyToData() {
-        
-    }
-    
-    function cloneData() {
-        
-    }
-    
-    function drawPalette() {
-        
-    }
-    
-    function resizeCanvas() {
-        
-    }
-    
-    function resizePreview() {
-        
-    }
-    
-    function refresh() {
-        
-    }
-    
-    function cls() {
-        
-    }
-    
-    function nextFrame() {
-        
-    }
-    
-    function prevFrame() {
-        
-    }
-    
-    function changePalette() {
-        
-    }
-    
-    function nextColor() {
-        
-    }
-    
-    function prevColor() {
-        
-    }
-    
-    function createUI() {
-        
-    }
-    
-    function increaseSize() {
-        
-    }
-    
-    function decreaseSize() {
-        
-    }
-    
-    function increasePreviewSize() {
-        
-    }
-    
-    function decreasePreviewSize() {
-        
-    }
-    
-    function save() {
-        
-    }
-    
-    function shiftLeft() {
-        
-    }
-    
-    function shiftRight() {
-        
-    }
-    
-    function shiftUp() {
-        
-    }
-    
-    function shiftDown() {
-        
-    }
-    
-    function onDown() {
-        
-    }
-    
-    function onUp() {
-        
-    }
-    
-    function paint() {
-        
-    }
-    
-    
-    function quitGame() {
-
-        //  Here you should destroy anything you no longer need.
-        //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
-        //  Then let's go back to the main menu.
-        game.state.start('MainMenu');
-
-    }
-    
-    return {
-        
-create: function () {
-
-    //   So we can right-click to erase
-    document.body.oncontextmenu = function() { return false; };
-
-    Phaser.Canvas.setUserSelect(game.canvas, 'none');
-    Phaser.Canvas.setTouchAction(game.canvas, 'none');
-
-    game.stage.backgroundColor = '#505050';
-    createUI();
-    createDrawingArea();
-    createPreview();
-    createEventListeners();
-
-    resetData();
-    setColor(2);
-
-},
- 
- resetData: function () {
+   function resetData() {
  
     data = [];
 
@@ -231,9 +75,9 @@ create: function () {
         data.push(a);
     }
 
-},
+}
 
-copyToData: function (src) {
+ function copyToData(src) {
 
     data = [];
 
@@ -249,9 +93,9 @@ copyToData: function (src) {
         data.push(a);
     }
 
-},
+}
 
-cloneData: function () {
+function cloneData() {
 
     var clone = [];
 
@@ -270,9 +114,9 @@ cloneData: function () {
 
     return clone;
 
-},
+}
 
-createUI: function () {
+function createUI() {
 
     game.create.grid('uiGrid', 32 * 16, 32, 32, 32, 'rgba(255,255,255,0.5)');
 
@@ -408,9 +252,9 @@ createUI: function () {
     saveIcon.input.useHandCursor = true;
     saveIcon.events.onInputDown.add(save, this);
 
-},
+}
 
-createDrawingArea: function () {
+function createDrawingArea() {
 
     game.create.grid('drawingGrid', 16 * canvasZoom, 16 * canvasZoom, canvasZoom, canvasZoom, 'rgba(0,191,243,0.8)');
 
@@ -430,7 +274,7 @@ createDrawingArea: function () {
 
 },
 
-resizeCanvas: function () {
+function resizeCanvas() {
 
     canvas.resize(spriteWidth * canvasZoom, spriteHeight * canvasZoom);
     canvasBG.resize(canvas.width + 2, canvas.height + 2);
@@ -442,7 +286,7 @@ resizeCanvas: function () {
     
 },
 
-createPreview: function () {
+function createPreview() {
 
     preview = game.make.bitmapData(spriteWidth * previewSize, spriteHeight * previewSize);
     previewBG = game.make.bitmapData(preview.width + 2, preview.height + 2);
@@ -456,9 +300,9 @@ createPreview: function () {
     previewBG.addToWorld(x, y);
     preview.addToWorld(x + 1, y + 1);
 
-},
+}
 
-resizePreview: function () {
+function resizePreview() {
 
     preview.resize(spriteWidth * previewSize, spriteHeight * previewSize);
     previewBG.resize(preview.width + 2, preview.height + 2);
@@ -466,9 +310,9 @@ resizePreview: function () {
     previewBG.rect(0, 0, previewBG.width, previewBG.height, '#fff');
     previewBG.rect(1, 1, previewBG.width - 2, previewBG.height - 2, '#3f5c67');
     
-},
+}
 
-refresh: function () {
+function refresh() {
 
     //  Update both the Canvas and Preview
     canvas.clear();
@@ -489,9 +333,9 @@ refresh: function () {
         }
     }
 
-},
+}
 
-createEventListeners: function () {
+function createEventListeners() {
 
     keys = game.input.keyboard.addKeys(
         {
@@ -545,14 +389,14 @@ createEventListeners: function () {
 
 },
 
-cls: function () {
+function cls() {
 
     resetData();
     refresh();
 
-},
+}
 
-nextFrame: function () {
+function nextFrame() {
 
     //  Save current frame
     frames[frame - 1] = cloneData();
@@ -573,9 +417,9 @@ nextFrame: function () {
 
     frameText.text = "Frame: " + frame + " / " + frames.length;
 
-},
+}
 
-prevFrame: function () {
+function prevFrame() {
 
     if (frame === 1)
     {
@@ -594,9 +438,9 @@ prevFrame: function () {
 
     frameText.text = "Frame: " + frame + " / " + frames.length;
     
-},
+}
 
-drawPalette: function () {
+function drawPalette() {
 
     //  Draw the palette to the UI bmd
     ui.clear(0, 0, 32 * 16, 32);
@@ -611,9 +455,9 @@ drawPalette: function () {
 
     ui.copy('uiGrid');
 
-},
+}
 
-changePalette: function () {
+function changePalette() {
 
     palette++;
 
@@ -625,9 +469,9 @@ changePalette: function () {
     drawPalette();
     refresh();
 
-},
+}
 
-setColor: function (i, p) {
+function setColor(i, p) {
 
     if (typeof p !== 'undefined')
     {
@@ -649,23 +493,23 @@ setColor: function (i, p) {
 
     paletteArrow.x = (i * 32) + 8;
 
-},
+}
 
-nextColor: function () {
+function nextColor() {
 
     var i = colorIndex + 1;
     setColor(i);
 
-},
+}
 
-prevColor: function () {
+function prevColor() {
 
     var i = colorIndex - 1;
     setColor(i);
 
-},
+}
 
-increaseSize: function (sprite) {
+function increaseSize(sprite) {
 
     if (sprite.name === 'width')
     {
@@ -693,9 +537,9 @@ increaseSize: function (sprite) {
     widthText.text = "Width: " + spriteWidth;
     heightText.text = "Height: " + spriteHeight;
 
-},
+}
 
-decreaseSize: function (sprite) {
+function decreaseSize(sprite) {
 
     if (sprite.name === 'width')
     {
@@ -723,9 +567,9 @@ decreaseSize: function (sprite) {
     widthText.text = "Width: " + spriteWidth;
     heightText.text = "Height: " + spriteHeight;
 
-},
+}
 
-increasePreviewSize: function () {
+function increasePreviewSize() {
 
     if (previewSize === 16)
     {
@@ -738,9 +582,9 @@ increasePreviewSize: function () {
     resizePreview();
     refresh();
 
-},
+}
 
-decreasePreviewSize: function () {
+function decreasePreviewSize: () {
 
     if (previewSize === 1)
     {
@@ -753,9 +597,9 @@ decreasePreviewSize: function () {
     resizePreview();
     refresh();
 
-},
+}
 
-save: function () {
+function save() {
 
     //  Save current frame
     frames[frame - 1] = cloneData();
@@ -798,9 +642,9 @@ save: function () {
     saveText.alpha = 1;
     game.add.tween(saveText).to( { alpha: 0 }, 2000, "Linear", true);
 
-},
+}
 
-shiftLeft: function () {
+function shiftLeft() {
 
     canvas.moveH(-canvasZoom);
     preview.moveH(-previewSize);
@@ -811,9 +655,9 @@ shiftLeft: function () {
         data[y].push(r);
     }
 
-},
+}
 
-shiftRight: function () {
+function shiftRight() {
 
     canvas.moveH(canvasZoom);
     preview.moveH(previewSize);
@@ -824,9 +668,9 @@ shiftRight: function () {
         data[y].splice(0, 0, r);
     }
 
-},
+}
 
-shiftUp: function () {
+function shiftUp() {
 
     canvas.moveV(-canvasZoom);
     preview.moveV(-previewSize);
@@ -834,9 +678,9 @@ shiftUp: function () {
     var top = data.shift();
     data.push(top);
 
-},
+}
 
-shiftDown: function () {
+function shiftDown() {
 
     canvas.moveV(canvasZoom);
     preview.moveV(previewSize);
@@ -844,9 +688,9 @@ shiftDown: function () {
     var bottom = data.pop();
     data.splice(0, 0, bottom);
 
-},
+}
 
-onDown: function (pointer) {
+function onDown(pointer) {
 
     if (pointer.y <= 32)
     {
@@ -868,13 +712,13 @@ onDown: function (pointer) {
         paint(pointer);
     }
 
-},
+}
 
-onUp: function () {
+function onUp() {
     isDown = false;
-},
+}
 
-paint: function (pointer) {
+function paint(pointer) {
 
     //  Get the grid loc from the pointer
     var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
@@ -905,6 +749,39 @@ paint: function (pointer) {
         preview.rect(x * previewSize, y * previewSize, previewSize, previewSize, color);
     }
 
+}
+    
+    
+    function quitGame() {
+
+        //  Here you should destroy anything you no longer need.
+        //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
+
+        //  Then let's go back to the main menu.
+        game.state.start('MainMenu');
+
+    }
+    
+    return {
+        
+create: function () {
+
+    //   So we can right-click to erase
+    document.body.oncontextmenu = function() { return false; };
+
+    Phaser.Canvas.setUserSelect(game.canvas, 'none');
+    Phaser.Canvas.setTouchAction(game.canvas, 'none');
+
+    game.stage.backgroundColor = '#505050';
+    createUI();
+    createDrawingArea();
+    createPreview();
+    createEventListeners();
+
+    resetData();
+    setColor(2);
+
 },
+ 
     };
 };
