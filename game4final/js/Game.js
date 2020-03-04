@@ -718,39 +718,7 @@ function onUp() {
     isDown = false;
 }
     
-    
-    function quitGame() {
-
-        //  Here you should destroy anything you no longer need.
-        //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
-        //  Then let's go back to the main menu.
-        game.state.start('MainMenu');
-
-    }
-    
-    return {
-        
-create: function () {
-
-    //   So we can right-click to erase
-    document.body.oncontextmenu = function() { return false; };
-
-    Phaser.Canvas.setUserSelect(game.canvas, 'none');
-    Phaser.Canvas.setTouchAction(game.canvas, 'none');
-
-    game.stage.backgroundColor = '#505050';
-    createUI();
-    createDrawingArea();
-    createPreview();
-    createEventListeners();
-
-    resetData();
-    setColor(2);
-
-},
-        
-        paint: function (pointer) {
+function paint(pointer) {
 
     //  Get the grid loc from the pointer
     var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
@@ -782,6 +750,39 @@ create: function () {
     }
 
 }
+    
+    
+    function quitGame() {
+
+        //  Here you should destroy anything you no longer need.
+        //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
+
+        //  Then let's go back to the main menu.
+        game.state.start('MainMenu');
+
+    }
+    
+    return {
+        
+create: function () {
+
+    //   So we can right-click to erase
+    document.body.oncontextmenu = function() { return false; };
+
+    Phaser.Canvas.setUserSelect(game.canvas, 'none');
+    Phaser.Canvas.setTouchAction(game.canvas, 'none');
+
+    game.stage.backgroundColor = '#505050';
+    createUI();
+    createDrawingArea();
+    createPreview();
+    createEventListeners();
+
+    resetData();
+    setColor(2);
+
+},
+       
  
     };
 };
