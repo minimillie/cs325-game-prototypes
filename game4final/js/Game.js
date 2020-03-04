@@ -717,39 +717,6 @@ function onDown(pointer) {
 function onUp() {
     isDown = false;
 }
-
-function paint(pointer) {
-
-    //  Get the grid loc from the pointer
-    var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
-    var y = game.math.snapToFloor(pointer.y - canvasSprite.y, canvasZoom) / canvasZoom;
-
-    if (x < 0 || x >= spriteWidth || y < 0 || y >= spriteHeight)
-    {
-        return;
-    }
-
-    coords.text = "X: " + x + "\tY: " + y;
-
-    if (!isDown)
-    {
-        return;
-    }
-
-    if (isErase)
-    {
-        data[y][x] = '.';
-        canvas.clear(x * canvasZoom, y * canvasZoom, canvasZoom, canvasZoom, color);
-        preview.clear(x * previewSize, y * previewSize, previewSize, previewSize, color);
-    }
-    else
-    {
-        data[y][x] = pmap[colorIndex];
-        canvas.rect(x * canvasZoom, y * canvasZoom, canvasZoom, canvasZoom, color);
-        preview.rect(x * previewSize, y * previewSize, previewSize, previewSize, color);
-    }
-
-}
     
     
     function quitGame() {
@@ -782,6 +749,39 @@ create: function () {
     setColor(2);
 
 },
+        
+        paint: function (pointer) {
+
+    //  Get the grid loc from the pointer
+    var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
+    var y = game.math.snapToFloor(pointer.y - canvasSprite.y, canvasZoom) / canvasZoom;
+
+    if (x < 0 || x >= spriteWidth || y < 0 || y >= spriteHeight)
+    {
+        return;
+    }
+
+    coords.text = "X: " + x + "\tY: " + y;
+
+    if (!isDown)
+    {
+        return;
+    }
+
+    if (isErase)
+    {
+        data[y][x] = '.';
+        canvas.clear(x * canvasZoom, y * canvasZoom, canvasZoom, canvasZoom, color);
+        preview.clear(x * previewSize, y * previewSize, previewSize, previewSize, color);
+    }
+    else
+    {
+        data[y][x] = pmap[colorIndex];
+        canvas.rect(x * canvasZoom, y * canvasZoom, canvasZoom, canvasZoom, color);
+        preview.rect(x * previewSize, y * previewSize, previewSize, previewSize, color);
+    }
+
+}
  
     };
 };
