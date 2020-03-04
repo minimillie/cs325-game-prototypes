@@ -584,7 +584,7 @@ function increasePreviewSize() {
 
 }
 
-function decreasePreviewSize: () {
+function decreasePreviewSize() {
 
     if (previewSize === 1)
     {
