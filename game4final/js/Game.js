@@ -59,6 +59,8 @@ var data;
 //extra
 var colorIndex;
     
+//var pointer =  pointer;
+    
    function resetData() {
  
     data = [];
@@ -785,7 +787,7 @@ create: function () {
   
  update: function () {
    
-    if (pointer.isDown == true) {
+    if (game.input.onDown == true) {
         
         paint(pointer);
     }
