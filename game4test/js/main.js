@@ -283,8 +283,9 @@ function createUI() {
     saveIcon.events.onInputDown.add(save, this);
     
     chicken1 = game.add.sprite(100, 400, 'minecraft');
-    
-    
+    chicken2 = game.add.sprite(200, 400, 'ronald');
+    chicken3 = game.add.sprite(300, 400, 'zombie');
+    chicken4 = game.add.sprite(400, 400, 'robotpirate');    
 
 }
     
