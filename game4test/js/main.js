@@ -86,14 +86,6 @@ var chicken4;
 //extra
 var colorIndex;
     
-    
-function create() {
-    music = game.add.audio('utopia');
-    music = game.add.audio
-    music.play();
-    
-    chicken1 = game.add.sprite(100, 300, 'minecraft');
-}
 
 function resetData() {
 
@@ -287,6 +279,12 @@ function createUI() {
     saveIcon.inputEnabled = true;
     saveIcon.input.useHandCursor = true;
     saveIcon.events.onInputDown.add(save, this);
+    
+    music = game.add.audio('utopia');
+    music = game.add.audio
+    music.play();
+    
+    chicken1 = game.add.sprite(100, 300, 'minecraft');
 
 }
 
