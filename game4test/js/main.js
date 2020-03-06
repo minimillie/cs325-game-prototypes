@@ -650,6 +650,9 @@ function create() {
 
     resetData();
     setColor(2);
+    
+    music = game.add.audio('utopia');
+    music.play();
 
 }
 
@@ -774,13 +777,6 @@ function onUp() {
 
 function paint(pointer) {
     
-    music = game.add.audio('utopia');
-    
-    if (check = 0) {
-    check = 1;
-    music.play(); 
-    }
-
     //  Get the grid loc from the pointer
     var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
     var y = game.math.snapToFloor(pointer.y - canvasSprite.y, canvasZoom) / canvasZoom;
