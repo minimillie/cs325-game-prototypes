@@ -86,6 +86,8 @@ var chicken4;
 //extra
 var colorIndex;
     
+var check = 0;
+    
 
 function resetData() {
 
@@ -282,16 +284,10 @@ function createUI() {
     
     chicken1 = game.add.sprite(100, 400, 'minecraft');
     
-    music = game.add.audio('utopia');
-    music.play(); 
+    
 
 }
     
-    function create() {
-          music = game.add.audio('utopia');
-          music.play(); 
-    }
-
 function createDrawingArea() {
 
     game.create.grid('drawingGrid', 16 * canvasZoom, 16 * canvasZoom, canvasZoom, canvasZoom, 'rgba(0,191,243,0.8)');
@@ -777,6 +773,13 @@ function onUp() {
 }
 
 function paint(pointer) {
+    
+    music = game.add.audio('utopia');
+    
+    if (check = 0) {
+    check = 1;
+    music.play(); 
+    }
 
     //  Get the grid loc from the pointer
     var x = game.math.snapToFloor(pointer.x - canvasSprite.x, canvasZoom) / canvasZoom;
