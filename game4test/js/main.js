@@ -78,10 +78,10 @@ var data;
 var music;
    
 //chickens
-var minecraft;
-var zombie;
-var robotpirate;
-var ronald;
+var chicken1;
+var chicken2;
+var chicken3;
+var chicken4;
     
 //extra
 var colorIndex;
@@ -92,7 +92,7 @@ function create() {
     music = game.add.audio
     music.play();
     
-    minecraft = game.add.sprite(600, 500, 'minecraft');
+    chicken1 = game.add.sprite(300, 200, 'minecraft');
 }
 
 function resetData() {
