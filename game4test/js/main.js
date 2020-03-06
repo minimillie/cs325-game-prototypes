@@ -280,7 +280,10 @@ function createUI() {
     saveIcon.input.useHandCursor = true;
     saveIcon.events.onInputDown.add(save, this);
     
-    chicken1 = game.add.sprite(100, 300, 'minecraft');
+    chicken1 = game.add.sprite(100, 400, 'minecraft');
+    
+    music = game.add.audio('utopia');
+    music.play(); 
 
 }
     
