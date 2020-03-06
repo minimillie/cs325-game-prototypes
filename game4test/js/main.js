@@ -92,7 +92,7 @@ function create() {
     music = game.add.audio
     music.play();
     
-    chicken1 = game.add.sprite(300, 200, 'minecraft');
+    chicken1 = game.add.sprite(100, 300, 'minecraft');
 }
 
 function resetData() {
