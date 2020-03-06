@@ -13,6 +13,15 @@ window.onload = function() {
    
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, resetData: resetData, copyToData: copyToData, cloneData: cloneData, createUI: createUI, drawPalette: drawPalette, createDrawingArea: createDrawingArea, resizeCanvas: resizeCanvas, createPreview: createPreview, resizePreview: resizePreview, refresh: refresh, createEventListeners: createEventListeners, cls: cls, nextFrame: nextFrame, prevFrame: prevFrame, drawPalette: drawPalette, changePalette: changePalette, setColor: setColor, nextColor: nextColor, prevColor: prevColor, increaseSize: increaseSize, decreaseSize: decreaseSize, increasePreviewSize: increasePreviewSize, decreasePreviewSize: decreasePreviewSize, create: create, save: save, shiftLeft: shiftLeft, shiftRight: shiftRight, shiftUp: shiftUp, shiftDown: shiftDown, onDown: onDown, onUp: onUp, paint: paint });
 
+    
+function preload() {
+    game.load.audio('utopia', 'assets/utopia.mp3');
+    game.load.image('ronald', 'assets/ronald.png');
+    game.load.image('minecraft', 'assets/minecraft.png');
+    game.load.image('robotpirate', 'assets/robotpirate.png');
+    game.load.image('zombie', 'assets/zombie.png');
+}
+    
 //  Dimensions
 var previewSize = 6;
 var spriteWidth = 8;
@@ -78,16 +87,9 @@ var ronald;
 var colorIndex;
     
     
-function preload() {
-    game.load.audio('utopia', 'assets/utopia.mp3');
-    game.load.image('ronald', 'assets/ronald.png');
-    game.load.image('minecraft', 'assets/minecraft.png');
-    game.load.image('robotpirate', 'assets/robotpirate.png');
-    game.load.image('zombie', 'assets/zombie.png');
-}
-    
 function create() {
     music = game.add.audio('utopia');
+    music = game.add.audio
     music.play();
     
     minecraft = game.add.sprite(600, 500, 'minecraft');
