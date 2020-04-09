@@ -29,6 +29,7 @@ var music
 var door;
 var stateText;
 var ground;
+var t;
 
 function preload() {
 
@@ -37,6 +38,7 @@ function preload() {
     game.load.audio('ambient', 'assets/music.mp3');
     game.load.image('doors', 'assets/castledoors.png');
     game.load.image('dirt', 'assets/platform.png');
+    game.load.image('tower', 'assets/tower.png');
 }
 
 function create() {
@@ -52,6 +54,8 @@ function create() {
     map = game.add.tilemap();
     
     door = game.add.sprite(760, 50, 'doors');
+    
+    t = game.add.sprite(400, 600, 'tower');
     
     //ground = game.add.sprite(760, 100, 'dirt');
 
