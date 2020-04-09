@@ -23,6 +23,7 @@ var player;
 var facing = 'left';
 var jumpTimer = 0;
 var jumpButton;
+var currentTileMarker;
 
 function preload() {
 
