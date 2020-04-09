@@ -24,16 +24,20 @@ var facing = 'left';
 var jumpTimer = 0;
 var jumpButton;
 var currentTileMarker;
+var bg;
 
 function preload() {
 
     game.load.spritesheet('dude', 'assets/newgirl.png', 32, 48);
+    game.load.image('background', 'assets/fortress.png', 32, 48);
 
 }
 
 function create() {
 
     game.stage.backgroundColor = '#2d2d2d';
+    
+     bg = game.add.tileSprite(0, 0, 800, 600, 'background');
 
     //  Creates a blank tilemap
     map = game.add.tilemap();
