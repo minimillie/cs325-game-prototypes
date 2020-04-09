@@ -25,15 +25,19 @@ var jumpTimer = 0;
 var jumpButton;
 var currentTileMarker;
 var bg;
+var music
 
 function preload() {
 
     game.load.spritesheet('dude', 'assets/newgirl.png', 32, 48);
     game.load.image('background', 'assets/fortress.png', 32, 48);
-
+    game.load.audio('ambient', 'assets/music.mp3');
 }
 
 function create() {
+    
+    music = game.add.audio('ambient');
+    music.play();
 
     game.stage.backgroundColor = '#2d2d2d';
     
