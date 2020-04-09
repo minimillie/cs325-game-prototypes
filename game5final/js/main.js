@@ -28,6 +28,7 @@ var bg;
 var music
 var door;
 var stateText;
+var ground;
 
 function preload() {
 
@@ -35,6 +36,7 @@ function preload() {
     game.load.image('background', 'assets/fortress.png', 32, 48);
     game.load.audio('ambient', 'assets/music.mp3');
     game.load.image('doors', 'assets/castledoors.png');
+    game.load.image('dirt', 'assets/platform.png');
 }
 
 function create() {
@@ -50,6 +52,8 @@ function create() {
     map = game.add.tilemap();
     
     door = game.add.sprite(750, 200, 'doors');
+    
+    ground = game.add.sprite(740, 200, 'dirt');
 
     //  This is our tileset - it's just a BitmapData filled with a selection of randomly colored tiles
     //  but you could generate anything here
