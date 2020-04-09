@@ -27,7 +27,7 @@ var currentTileMarker;
 
 function preload() {
 
-    game.load.spritesheet('dude', 'assets/girl.png', 32, 48);
+    game.load.spritesheet('dude', 'assets/newgirl.png', 32, 48);
 
 }
 
