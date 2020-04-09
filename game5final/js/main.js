@@ -27,6 +27,7 @@ var currentTileMarker;
 var bg;
 var music
 var door;
+var stateText;
 
 function preload() {
 
@@ -100,6 +101,10 @@ function create() {
     jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     game.input.addMoveCallback(updateMarker, this);
+    
+    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '84px Arial', fill: '#fff' });
+    stateText.anchor.setTo(0.5, 0.5);
+    stateText.visible = false;
 
 }
 
@@ -153,6 +158,8 @@ function update() {
         player.body.velocity.y = -250;
         jumpTimer = game.time.now + 750;
     }
+    
+    game.physics.arcade.overlap(player, door, collisionHandler, null, this);
 
 }
 
@@ -211,6 +218,13 @@ function createTileSelector() {
 
     tileSelector.add(currentTileMarker);
 
+}
+    
+    function collisionHandler (player, door) {
+    
+    stateText.text="Check back next week for what's behind the door, until then free-create!";
+    stateText.visible = true;
+   
 }
 
 };
