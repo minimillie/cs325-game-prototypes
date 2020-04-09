@@ -26,7 +26,7 @@ var jumpButton;
 
 function preload() {
 
-    game.load.spritesheet('dude', 'assets/games/starstruck/dude.png', 1, 1);
+    game.load.spritesheet('dude', 'assets/dude.png', 1, 1);
 
 }
 
