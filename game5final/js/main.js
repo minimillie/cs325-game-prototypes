@@ -92,7 +92,7 @@ function create() {
     player = game.add.sprite(64, 100, 'dude');
     game.physics.arcade.enable(player);
     game.physics.arcade.enable(door);
-    game.physic.arcade.enable(ground);
+    //game.physic.arcade.enable(ground);
     game.physics.arcade.gravity.y = 350;
 
     player.body.bounce.y = 0.1;
