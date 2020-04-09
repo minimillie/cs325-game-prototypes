@@ -159,7 +159,7 @@ function update() {
         jumpTimer = game.time.now + 750;
     }
     
-    game.physics.arcade.overlap(player, door, collisionHandler, null, this);
+    game.physics.arcade.collide(player, door, collisionHandler, null, this);
 
 }
 
