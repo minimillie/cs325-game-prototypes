@@ -11,7 +11,7 @@ window.onload = function() {
     // All loading functions will typically all be found inside "preload()".
     
     // var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { create: create });
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, pickTile: pickTile, updateMarker: updateMarker, createTileSelector: createTileSelector });
 
 var bmd;
 var map;
