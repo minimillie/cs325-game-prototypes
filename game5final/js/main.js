@@ -96,13 +96,13 @@ function create() {
     player = game.add.sprite(64, 100, 'dude');
     game.physics.arcade.enable(player);
     game.physics.arcade.enable(door);
-    game.physic.arcade.enable(t);
+    //game.physic.arcade.enable(t);
     game.physics.arcade.gravity.y = 350;
 
     player.body.bounce.y = 0.1;
     player.body.collideWorldBounds = true;
     door.body.collideWorldBounds = true;
-    t.body.collideWorldBounds = true;
+    //t.body.collideWorldBounds = true;
     //ground.body.immovable = true;
     player.body.setSize(20, 32, 5, 16);
 
