@@ -98,8 +98,8 @@ function create() {
     player.body.bounce.y = 0.1;
     player.body.collideWorldBounds = true;
     door.body.collideWorldBounds = true;
-    ground.body.collideWorldBounds = true;
-    ground.body.immovable = true;
+    //ground.body.collideWorldBounds = true;
+    //ground.body.immovable = true;
     player.body.setSize(20, 32, 5, 16);
 
     player.animations.add('left', [0, 1, 2, 3], 10, true);
