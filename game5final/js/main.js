@@ -53,7 +53,7 @@ function create() {
     
     door = game.add.sprite(760, 50, 'doors');
     
-    ground = game.add.sprite(760, 100, 'dirt');
+    //ground = game.add.sprite(760, 100, 'dirt');
 
     //  This is our tileset - it's just a BitmapData filled with a selection of randomly colored tiles
     //  but you could generate anything here
