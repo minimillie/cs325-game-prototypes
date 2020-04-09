@@ -51,9 +51,9 @@ function create() {
     //  Creates a blank tilemap
     map = game.add.tilemap();
     
-    door = game.add.sprite(760, 400, 'doors');
+    door = game.add.sprite(760, 50, 'doors');
     
-    ground = game.add.sprite(740, 300, 'dirt');
+    ground = game.add.sprite(740, 100, 'dirt');
 
     //  This is our tileset - it's just a BitmapData filled with a selection of randomly colored tiles
     //  but you could generate anything here
