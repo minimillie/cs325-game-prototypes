@@ -55,7 +55,7 @@ function create() {
     
     door = game.add.sprite(760, 50, 'doors');
     
-    t = game.add.sprite(400, 600, 'tower');
+    t = game.add.sprite(400, 200, 'tower');
     
     //ground = game.add.sprite(760, 100, 'dirt');
 
