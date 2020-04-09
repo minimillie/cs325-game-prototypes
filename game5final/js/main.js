@@ -26,12 +26,14 @@ var jumpButton;
 var currentTileMarker;
 var bg;
 var music
+var door;
 
 function preload() {
 
     game.load.spritesheet('dude', 'assets/newgirl.png', 32, 48);
     game.load.image('background', 'assets/fortress.png', 32, 48);
     game.load.audio('ambient', 'assets/music.mp3');
+    game.load.image('doors', 'assets/castledoors.png');
 }
 
 function create() {
@@ -45,6 +47,8 @@ function create() {
 
     //  Creates a blank tilemap
     map = game.add.tilemap();
+    
+    door = game.add.sprite(750, 200, 'doors');
 
     //  This is our tileset - it's just a BitmapData filled with a selection of randomly colored tiles
     //  but you could generate anything here
